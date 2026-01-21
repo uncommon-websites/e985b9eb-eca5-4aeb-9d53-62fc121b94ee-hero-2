@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Partners Hero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        /* Custom grid for the blue graphic to mimic the design */
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            grid-template-rows: repeat(15, 1fr);
+            width: 100%;
+            height: 100%;
+        }
+        
+        .cell {
+            background-color: #001e62; /* Deep blue base */
+        }
+
+        /* Opacity variations to create the gradient/grid effect */
+        .col-1 { opacity: 0.3; background-color: #60a5fa; }
+        .col-2 { opacity: 0.4; background-color: #3b82f6; }
+        .col-3 { opacity: 0.6; background-color: #2563eb; }
+        .col-4 { opacity: 0.8; background-color: #1d4ed8; }
+        
+        .row-last-1 { opacity: 0.3; background-color: #60a5fa; }
+        .row-last-2 { opacity: 0.4; background-color: #3b82f6; }
+        .row-last-3 { opacity: 0.5; background-color: #2563eb; }
+
+        /* The main dark block */
+        .main-block {
+            grid-column: 5 / -1;
+            grid-row: 1 / -4;
+            background-color: #001242; /* Darkest Navy */
+        }
+    </style>
+</head>
+<body class="h-screen flex flex-col justify-between p-6 md:p-10 overflow-hidden relative">
+
+    <!-- Header Section -->
+    <header class="flex w-full relative z-20">
+        <!-- Logo -->
+        <div class="flex items-end text-5xl font-bold tracking-tighter leading-none" style="color: #1e40af">
+            Mare Liberum
+        </div>
+
+        <!-- Navigation -->
+        <nav class="ml-32 pt-2">
+            <ul class="text-sm font-medium space-y-1 text-black">
+                <li class="flex items-center -ml-4">
+                    <span class="w-1.5 h-1.5 bg-black rounded-full mr-2.5"></span>
+                    About
+                </li>
+                <li>Team</li>
+                <li>Portfolio</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow relative w-full">
+        
+        <!-- Left Text Content -->
+        <div class="absolute top-[20%] left-0 w-full md:w-[35%] space-y-10 z-10">
+            <p class="text-xl md:text-[1.35rem] font-medium leading-tight tracking-tight text-black">
+                Matrix is an early-stage venture capital firm, investing from idea through Series A. As a close-knit team of former founders and company builders, we've partnered with companies from Apple and FedEx to Oculus and Canva.
+            </p>
+            <p class="text-xl md:text-[1.35rem] font-medium leading-tight tracking-tight text-black">
+                We're contrarians who invest with conviction, working with founders who have deep technical expertise and a specific vision of the future.
+            </p>
+        </div>
+
+        <!-- Right Graphic (Abstract Blue Grid) -->
+        <div class="absolute top-[-80px] right-[-40px] w-[55%] h-[85vh] z-0">
+            <div class="matrix-grid">
+                <!-- Left Edge Gradient Columns -->
+                <!-- We simulate the grid by placing divs that span rows/cols -->
+                
+                <!-- Column 1 (Lightest) -->
+                <div style="grid-column: 1; grid-row: 1 / -1;" class="col-1"></div>
+                <!-- Column 2 -->
+                <div style="grid-column: 2; grid-row: 1 / -1;" class="col-2"></div>
+                <!-- Column 3 -->
+                <div style="grid-column: 3; grid-row: 1 / -1;" class="col-3"></div>
+                <!-- Column 4 -->
+                <div style="grid-column: 4; grid-row: 1 / -1;" class="col-4"></div>
+
+                <!-- The Main Dark Block -->
+                <div class="main-block shadow-2xl"></div>
+
+                <!-- Horizontal Lines/Rows at the bottom to create the grid effect -->
+                <div style="grid-column: 5 / -1; grid-row: 13;" class="row-last-3"></div>
+                <div style="grid-column: 5 / -1; grid-row: 14;" class="row-last-2"></div>
+                <div style="grid-column: 5 / -1; grid-row: 15;" class="row-last-1"></div>
+
+                <!-- Overlay grid lines for texture (optional detail) -->
+                <div style="grid-column: 1/-1; grid-row: 5; height: 1px; background: rgba(255,255,255,0.05);"></div>
+                <div style="grid-column: 1/-1; grid-row: 9; height: 1px; background: rgba(255,255,255,0.05);"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="flex justify-between items-end w-full relative z-20 pb-2">
+        <div class="text-sm font-medium text-black">
+            We are steady, engage early, and wear well.
+        </div>
+        
+        <div class="text-sm font-medium text-black absolute left-1/2 transform -translate-x-1/2">
+            &copy; 2025 Matrix Management Corporation
+        </div>
+
+        <div class="text-right leading-none">
+            <div class="font-bold text-lg tracking-tight">matrix</div>
+            <div class="text-sm text-gray-800">partners</div>
+        </div>
+    </footer>
+
+</body>
+</html>
